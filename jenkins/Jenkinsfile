@@ -16,10 +16,13 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
-            steps {
-                bat './jenkins/scripts/deliver.sh'
-            }
-        }
+        
+       
+       stage('Deploy'){
+          steps{
+             
+             bat '''copy C:\\Users\\Mayuresh.Marathe\\.jenkins\workspace\\SampleMavenApp\\target\\*.jar '''
+          }
+       }
     }
 }
